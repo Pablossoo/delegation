@@ -17,14 +17,14 @@ final class DelegationCostFactoryFactory implements DelegationCostFactoryInterfa
 
     public function create(\DateInterval $diffDaysStartAndEnd): DelegationCostCalculator
     {
-        if ($diffDaysStartAndEnd->h < self::MINIMAL_HOURS_TO_PAYMENT_DIET) {
+        if ($diffDaysStartAndEnd->d === 0 && $diffDaysStartAndEnd->h < self::MINIMAL_HOURS_TO_PAYMENT_DIET) {
             $delegationCalculator = new ZeroCostDelegation();
-        } elseif ($diffDaysStartAndEnd->days > self::LENGTH_DELEGATION_ALLOW_TO_GET_EXTRA__DIET) {
+        } elseif ($diffDaysStartAndEnd->d > self::LENGTH_DELEGATION_ALLOW_TO_GET_EXTRA__DIET) {
             $delegationCalculator = new BonusCostDelegation();
         } else {
             $delegationCalculator = new BaseCostDelegation();
         }
 
-        return new DelegationCostCalculator($delegationCalculator, $diffDaysStartAndEnd->days);
+        return new DelegationCostCalculator($delegationCalculator, $diffDaysStartAndEnd->d);
     }
 }

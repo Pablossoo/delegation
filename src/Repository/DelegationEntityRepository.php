@@ -42,12 +42,12 @@ final class DelegationEntityRepository extends ServiceEntityRepository
         }
     }
 
-    public function getDelegationsByUser(int $users): array
+    public function getDelegationsByUser(int $user): array
     {
         return $this->createQueryBuilder('d')
-            ->where('u.user = :user')
-            ->setParameter('user', $users)
-            ->orderBy('u.startDelegation')
+            ->where('d.user = :user')
+            ->setParameter('user', $user)
+            ->orderBy('d.startDelegation')
             ->getQuery()
             ->getResult();
     }
@@ -66,6 +66,6 @@ final class DelegationEntityRepository extends ServiceEntityRepository
             ->setParameter('startDelegation', $startDelegation)
             ->setParameter('endDelegation', $endDelegation)
             ->getQuery()
-            ->getOneOrNullResult();
+            ->getResult();
     }
 }

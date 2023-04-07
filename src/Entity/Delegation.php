@@ -18,10 +18,10 @@ class Delegation
     #[ORM\Column(type: 'string')]
     private string $country;
 
-    #[ORM\Column(type: 'date')]
+    #[ORM\Column(type: 'datetime')]
     private \DateTimeInterface $startDelegation;
 
-    #[ORM\Column(type: 'date')]
+    #[ORM\Column(type: 'datetime')]
     private \DateTimeInterface $endDelegation;
 
     #[ORM\Column(type: 'datetime')]

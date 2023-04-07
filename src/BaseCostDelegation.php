@@ -10,6 +10,6 @@ final class BaseCostDelegation implements CostDelegationInterface
 
     public function calculate(int $numberOfDaysOnDelegation): int
     {
-        return self::NORMAL_RATE_MULTIPLIER * $numberOfDaysOnDelegation;
+        return $numberOfDaysOnDelegation;
     }
 }
