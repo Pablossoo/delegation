@@ -18,11 +18,21 @@ Docker-compose v2 or higher.
 ## How to run
 
 1. Clone the project from https://github.com/Pablossoo/delegation
-2. Run the command `docker-compose up -d` in the main folder.
-3. Run  `docker compose exec php bash`
-4. In container inside: `Run composer install`
-5. Run `bin/console doctrine:migrations:migrate`
-6. The project should be available at http://127.0.0.1/
+2. copy .env.dist to .env and set access data  
+
+```mysql
+DATABASE_URL=mysql://test:test@database:3306/symfony
+
+MYSQL_DATABASE=
+MYSQL_USER=
+MYSQL_PASSWORD=
+MYSQL_ROOT_PASSWORD=
+```
+3. Run the command `docker-compose up -d` in the main folder.
+4. Run  `docker compose exec php bash`
+5. In container inside: `Run composer install`
+6. Run `bin/console doctrine:migrations:migrate`
+7. The project should be available at http://127.0.0.1/
 
 ## Quality tools:
 
