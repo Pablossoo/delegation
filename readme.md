@@ -153,3 +153,6 @@ fix: `vendor/bin/ecs check --fix`
 ## Roadmap
 
 - Unit tests
+
+
+if you have any questions please contact me: `pawell.lukowski@gmail.com`
