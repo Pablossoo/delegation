@@ -9,7 +9,7 @@ services:
       - .:/app
     environment:
       APP_ENV: ${APP_ENV:-dev}
-      DATABASE_URL: mysql://user:password@database:3306/symfony
+      DATABASE_URL: ${DATABASE_URL}
     networks:
       - symfony
 
@@ -28,14 +28,15 @@ services:
   database:
     image: mysql:8.0
     environment:
-      MYSQL_DATABASE: symfony
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
       - 3306:3306
     networks:
       - symfony
+
 
 networks:
   symfony:
