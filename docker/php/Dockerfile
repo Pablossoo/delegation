@@ -5,5 +5,5 @@ RUN apt-get update \
     && docker-php-ext-install intl pdo_mysql zip \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug
-
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 WORKDIR /app
