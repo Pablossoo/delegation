@@ -152,7 +152,10 @@ fix: `vendor/bin/ecs check --fix`
 
 ## Roadmap
 
+- Rewrite application to hexagonal architecture
 - Unit tests
+- Expansions with new functionalities
+- probably integration with google calendar
 
 
 if you have any questions please contact me: `pawell.lukowski@gmail.com`
