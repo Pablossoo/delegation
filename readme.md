@@ -152,8 +152,8 @@ fix: `vendor/bin/ecs check --fix`
 
 ## Roadmap
 
-- Rewrite application to hexagonal architecture
-- Unit tests
+- Rewrite application to hexagonal architecture  2024-01-04 - working in progress
+- Unit tests 
 - Expansions with new functionalities
 - probably integration with google calendar
 
