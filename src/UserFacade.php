@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App;
 
-use App\Entity\User;
-use App\Repository\UserRepository;
+use App\Domain\User\User;
+use App\Infrastructure\ORM\UserRepository;
 
 final readonly class UserFacade
 {
